@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<header id="header">
+			<h1>余桥和李林燠</h1>
+			<h2>他们的故事已经开始了</h2>
+			<div id="CountMsg" class="HotDate">
+				<p>
+					<span id="t_d" style="margin-left: 20px;">00天</span>
+					
+					<span id="t_h">00时</span>
+					
+					<span id="t_m">00分</span>
+					
+					<span id="t_s">00秒</span>
+				</p>
+			</div>
+			<h3 style="display: inline-block;background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);padding:5px 10px;border-radius: 6px;cursor: pointer;margin-left: 20px;">发生了什么</h3>
+		</header>
+
+		<script src="assets/js/main.js"></script>
+
+	</body>
+	<script type="text/javascript">
+		function getRTime() {
+			var EndTime = new Date('2020/9/16 11:07:00'); //截止时间
+			var NowTime = new Date();
+			var t = NowTime.getTime() - EndTime.getTime();
+
+			//累加
+			var d = Math.floor(t / 1000 / 60 / 60 / 24);
+			var h = Math.floor(t / 1000 / 60 / 60 % 24);
+			var m = Math.floor(t / 1000 / 60 % 60);
+			var s = Math.floor(t / 1000 % 60);
+
+
+			document.getElementById("t_d").innerHTML = d + "天";
+			document.getElementById("t_h").innerHTML = h + "时";
+			document.getElementById("t_m").innerHTML = m + "分";
+			document.getElementById("t_s").innerHTML = s + "秒";
+		}
+		setInterval(getRTime, 1000);
+	</script>
+</html>
